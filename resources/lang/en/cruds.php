@@ -51,6 +51,22 @@ return [
             'deleted_at_helper' => ''
         ]
     ],
+    'test' => [
+        'title' => 'Test',
+        'title_singular' => 'Test',
+    'fields' => [
+            'id' => 'ID',
+            'id_helper' => '',
+            'papai' => 'Papai',
+            'papai_helper' => '',
+            'created_at' => 'Created at',
+            'created_at_helper' => '',
+            'updated_at' => 'Updated at',
+            'updated_at_helper' => '',
+            'deleted_at' => 'Deleted at',
+            'deleted_at_helper' => ''
+        ]
+    ],
     'userManagement' => [
         'title' => 'User Management',
         'title_singular' => 'User Management'

@@ -14,6 +14,10 @@ Route::apiResource('roles', 'RolesApiController');
 Route::apiResource('tesstings', 'TesstingApiController');
 
 
+    // Tests
+Route::apiResource('tests', 'TestApiController');
+
+
     // Users
 Route::apiResource('users', 'UsersApiController');
 
