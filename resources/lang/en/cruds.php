@@ -67,6 +67,22 @@ return [
             'deleted_at_helper' => ''
         ]
     ],
+    'testAaaa' => [
+        'title' => 'Test Aaaa',
+        'title_singular' => 'Test Aaaa',
+    'fields' => [
+            'id' => 'ID',
+            'id_helper' => '',
+            'testas' => 'Testas',
+            'testas_helper' => '',
+            'created_at' => 'Created at',
+            'created_at_helper' => '',
+            'updated_at' => 'Updated at',
+            'updated_at_helper' => '',
+            'deleted_at' => 'Deleted at',
+            'deleted_at_helper' => ''
+        ]
+    ],
     'userManagement' => [
         'title' => 'User Management',
         'title_singular' => 'User Management'
