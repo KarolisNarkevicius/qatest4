@@ -62,6 +62,16 @@
 </a>
 </li>
 @endcan
+@can('test_access')
+<li class="{{ request()->is('admin/tests') || request()->is('admin/tests/*') ? 'active' : '' }}">
+<a href="{{ route("admin.tests.index") }}">
+<i class="fa-fw fas fa-cogs">
+
+</i>
+<span>{{ trans('cruds.test.title') }}</span>
+</a>
+</li>
+@endcan
 <li>
 <a href="#" onclick="event.preventDefault(); document.getElementById('logoutform').submit();">
 <i class="fas fa-fw fa-sign-out-alt">
