@@ -18,6 +18,10 @@ Route::apiResource('tesstings', 'TesstingApiController');
 Route::apiResource('tests', 'TestApiController');
 
 
+    // Testaaaas
+Route::apiResource('test-aaaas', 'TestAaaaApiController');
+
+
     // Users
 Route::apiResource('users', 'UsersApiController');
 

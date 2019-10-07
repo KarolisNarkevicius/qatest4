@@ -26,6 +26,11 @@ Route::delete('tests/destroy', 'TestController@massDestroy')->name('tests.massDe
 Route::resource('tests', 'TestController');
 
 
+    // Testaaaas
+Route::delete('test-aaaas/destroy', 'TestAaaaController@massDestroy')->name('test-aaaas.massDestroy');
+Route::resource('test-aaaas', 'TestAaaaController');
+
+
     // Users
 Route::delete('users/destroy', 'UsersController@massDestroy')->name('users.massDestroy');
 Route::resource('users', 'UsersController');
