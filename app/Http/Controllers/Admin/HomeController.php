@@ -2,23 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-
-
-class HomeController    {
-
-
-
-
-
-public function index()
+class HomeController
 {
-    
-
-
-
-
-    return view('home');
-}
-
-
+    public function index()
+    {
+        return view('home');
+    }
 }

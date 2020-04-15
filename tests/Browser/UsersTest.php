@@ -2,27 +2,19 @@
 
 namespace Tests\Browser;
 
-use Tests\DuskTestCase;
-use Laravel\Dusk\Browser;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Laravel\Dusk\Browser;
+use Tests\DuskTestCase;
 
-
-class UsersTest extends DuskTestCase  {
-
-
-
-
-
-public function testIndex()
+class UsersTest extends DuskTestCase
 {
-            $admin = \App\User::find(1);
+    public function testIndex()
+    {
+        $admin = \App\User::find(1);
         $this->browse(function (Browser $browser) use ($admin) {
-           $browser->loginAs($admin);
-$browser->visit(route('admin.users.index'));
-$browser->assertRouteIs('admin.users.index');
+            $browser->loginAs($admin);
+            $browser->visit(route('admin.users.index'));
+            $browser->assertRouteIs('admin.users.index');
         });
-    
-}
-
-
+    }
 }

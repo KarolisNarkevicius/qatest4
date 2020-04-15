@@ -5,27 +5,22 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+class Test extends Model
+{
+    use SoftDeletes;
 
-class Test extends Model  {
+    public $table = 'tests';
 
-use SoftDeletes;
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'deleted_at',
+    ];
 
-public $table = 'tests';
-
-protected $dates = [
-'created_at',
-'updated_at',
-'deleted_at',
-];
-
-protected $fillable = [
-'papai',
-'created_at',
-'updated_at',
-'deleted_at',
-];
-
-
-
-
+    protected $fillable = [
+        'mew',
+        'created_at',
+        'updated_at',
+        'deleted_at',
+    ];
 }

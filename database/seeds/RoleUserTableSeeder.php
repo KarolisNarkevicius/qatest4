@@ -1,26 +1,12 @@
 <?php
 
-
-
 use App\User;
 use Illuminate\Database\Seeder;
 
-
-class RoleUserTableSeeder extends Seeder  {
-
-
-
-
-
-public function run()
+class RoleUserTableSeeder extends Seeder
 {
-    
-
-
-
-User::findOrFail(1)->roles()->sync(1);
-    
-}
-
-
+    public function run()
+    {
+        User::findOrFail(1)->roles()->sync(1);
+    }
 }

@@ -9,6 +9,6 @@
 </div>
 @endsection
 @section('scripts')
-    @parent
-    
+@parent
+
 @endsection

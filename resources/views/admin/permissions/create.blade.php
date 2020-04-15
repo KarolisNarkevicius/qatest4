@@ -1,42 +1,44 @@
 @extends('layouts.admin')
 @section('content')
 <div class="content">
-    
+
     <div class="row">
         <div class="col-lg-12">
-
             <div class="panel panel-default">
                 <div class="panel-heading">
                     {{ trans('global.create') }} {{ trans('cruds.permission.title_singular') }}
                 </div>
                 <div class="panel-body">
-
-                    <form action="{{ route("admin.permissions.store") }}" method="POST" enctype="multipart/form-data">
-@csrf
-<div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
-<label for="title">{{ trans('cruds.permission.fields.title') }}*</label>
-<input type="text" id="title" name="title" class="form-control" value="{{ old('title', isset($permission) ? $permission->title : '') }}" required>
-@if($errors->has('title'))
-                        <p class="help-block">
-                            {{ $errors->first('title') }}
-                        </p>
-                    @endif
-<p class="helper-block">
-{{ trans('cruds.permission.fields.title_helper') }}
-</p>
-</div>
-<div>
-<input class="btn btn-danger" type="submit" value="{{ trans('global.save') }}">
-</div>
-</form>
-
-                    
+                    <form method="POST" action="{{ route("admin.permissions.store") }}" enctype="multipart/form-data">
+                        @csrf
+                        <div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
+                            <label class="required" for="title">{{ trans('cruds.permission.fields.title') }}</label>
+                            <input class="form-control" type="text" name="title" id="title" value="{{ old('title', '') }}" required>
+                            @if($errors->has('title'))
+                                <span class="help-block" role="alert">{{ $errors->first('title') }}</span>
+                            @endif
+                            <span class="help-block">{{ trans('cruds.permission.fields.title_helper') }}</span>
+                        </div>
+                        <div class="form-group {{ $errors->has('abc') ? 'has-error' : '' }}">
+                            <label for="abc">{{ trans('cruds.permission.fields.abc') }}</label>
+                            <input class="form-control" type="text" name="abc" id="abc" value="{{ old('abc', '') }}">
+                            @if($errors->has('abc'))
+                                <span class="help-block" role="alert">{{ $errors->first('abc') }}</span>
+                            @endif
+                            <span class="help-block">{{ trans('cruds.permission.fields.abc_helper') }}</span>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-danger" type="submit">
+                                {{ trans('global.save') }}
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
+
+
 
         </div>
     </div>
 </div>
 @endsection
-
-
