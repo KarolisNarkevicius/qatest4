@@ -2,10 +2,10 @@
 @section('content')
 <div class="login-box">
     <div class="login-logo">
-<a href="#">
-{{ trans('panel.site_title') }}
-</a>
-</div>
+        <a href="#">
+            {{ trans('panel.site_title') }}
+        </a>
+    </div>
     <div class="login-box-body">
         <p class="login-box-msg">
             {{ trans('global.reset_password') }}
@@ -13,25 +13,25 @@
         <form method="POST" action="{{ route('password.email') }}">
             {{ csrf_field() }}
             <div>
-<div class="form-group has-feedback">
-<input type="email" name="email" class="form-control" required ="autofocus" placeholder="{{ trans('global.login_email') }}">
-@if($errors->has('email'))
+                <div class="form-group has-feedback">
+                    <input type="email" name="email" class="form-control" required="autofocus" placeholder="{{ trans('global.login_email') }}">
+                    @if($errors->has('email'))
                         <p class="help-block">
                             {{ $errors->first('email') }}
                         </p>
                     @endif
-</div>
-<div class="row">
-<div class="col-xs-6">
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
 
-</div>
-<div class="col-xs-6">
-<button type="submit" class="btn btn-primary btn-block btn-flat">
-{{ trans('global.reset_password') }}
-</button>
-</div>
-</div>
-</div>
+                    </div>
+                    <div class="col-xs-6">
+                        <button type="submit" class="btn btn-primary btn-block btn-flat">
+                            {{ trans('global.reset_password') }}
+                        </button>
+                    </div>
+                </div>
+            </div>
         </form>
     </div>
 </div>

@@ -2,14 +2,14 @@
 @section('content')
 <div class="content">
     @can('test_create')
-<div style="margin-bottom: 10px;" class="row">
-<div class="col-lg-12">
-<a class="btn btn-success" href="{{ route("admin.tests.create") }}">
-{{ trans('global.add') }} {{ trans('cruds.test.title_singular') }}
-</a>
-</div>
-</div>
-@endcan
+        <div style="margin-bottom: 10px;" class="row">
+            <div class="col-lg-12">
+                <a class="btn btn-success" href="{{ route("admin.tests.create") }}">
+                    {{ trans('global.add') }} {{ trans('cruds.test.title_singular') }}
+                </a>
+            </div>
+        </div>
+    @endcan
     <div class="row">
         <div class="col-lg-12">
 
@@ -20,65 +20,65 @@
                 <div class="panel-body">
 
                     <div class="table-responsive">
-<table class=" table table-bordered table-striped table-hover datatable datatable-Test">
-<thead>
-<tr>
-<th width="10">
+                        <table class=" table table-bordered table-striped table-hover datatable datatable-Test">
+                            <thead>
+                                <tr>
+                                    <th width="10">
 
-</th>
-<th>
-{{ trans('cruds.test.fields.id') }}
-</th>
-<th>
-{{ trans('cruds.test.fields.papai') }}
-</th>
-<th>
-&nbsp;
-</th>
-</tr>
-</thead>
-<tbody>
-@foreach($tests as $key => $test)
- <tr data-entry-id="{{ $test->id }}">
-<td>
+                                    </th>
+                                    <th>
+                                        {{ trans('cruds.test.fields.id') }}
+                                    </th>
+                                    <th>
+                                        {{ trans('cruds.test.fields.mew') }}
+                                    </th>
+                                    <th>
+                                        &nbsp;
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($tests as $key => $test)
+                                    <tr data-entry-id="{{ $test->id }}">
+                                        <td>
 
-</td>
-<td>
-{{ $test->id ?? '' }}
-</td>
-<td>
-{{ $test->papai ?? '' }}
-</td>
-<td>
-    @can('test_show')
-    <a class="btn btn-xs btn-primary" href="{{ route('admin.tests.show', $test->id) }}">
-    {{ trans('global.view') }}
-    </a>
-@endcan
+                                        </td>
+                                        <td>
+                                            {{ $test->id ?? '' }}
+                                        </td>
+                                        <td>
+                                            {{ $test->mew ?? '' }}
+                                        </td>
+                                        <td>
+                                            @can('test_show')
+                                                <a class="btn btn-xs btn-primary" href="{{ route('admin.tests.show', $test->id) }}">
+                                                    {{ trans('global.view') }}
+                                                </a>
+                                            @endcan
 
-    @can('test_edit')
-    <a class="btn btn-xs btn-info" href="{{ route('admin.tests.edit', $test->id) }}">
-    {{ trans('global.edit') }}
-    </a>
-@endcan
+                                            @can('test_edit')
+                                                <a class="btn btn-xs btn-info" href="{{ route('admin.tests.edit', $test->id) }}">
+                                                    {{ trans('global.edit') }}
+                                                </a>
+                                            @endcan
 
-    @can('test_delete')
-    <form action="{{ route('admin.tests.destroy', $test->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
-    <input type="hidden" name="_method" value="DELETE">
-    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-    <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
-    </form>
-@endcan
+                                            @can('test_delete')
+                                                <form action="{{ route('admin.tests.destroy', $test->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
+                                                    <input type="hidden" name="_method" value="DELETE">
+                                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                    <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
+                                                </form>
+                                            @endcan
 
-</td>
+                                        </td>
 
-</tr> 
- @endforeach
-</tbody>
-</table>
-</div>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
 
-                    
+
                 </div>
             </div>
 
@@ -89,9 +89,9 @@
 @section('scripts')
 @parent
 <script>
-$(function () {
+    $(function () {
   let dtButtons = $.extend(true, [], $.fn.dataTable.defaults.buttons)
-  @can('test_delete')
+@can('test_delete')
   let deleteButtonTrans = '{{ trans('global.datatables.delete') }}'
   let deleteButton = {
     text: deleteButtonTrans,
@@ -134,4 +134,3 @@ $(function () {
 
 </script>
 @endsection
-

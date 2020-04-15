@@ -4,22 +4,10 @@ namespace App\Http\Resources\Admin;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-
-class TestResource extends JsonResource  {
-
-
-
-
-
-function toArray($request)
+class TestResource extends JsonResource
 {
-    
-
-
-
-return parent::toArray($request);
-    
-}
-
-
+    public function toArray($request)
+    {
+        return parent::toArray($request);
+    }
 }

@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'site_title' => 'testing123'
+    'site_title' => 'githubtest',
 ];
